@@ -1,3 +1,14 @@
+import os, sys
+key = input('Nhập key tại đây: ')
+if key == '':
+   print('sai key')
+   os.sys.exit()
+elif key == 'DGAME':
+   print('key đúng')
+else:
+   print('key sai')
+   os.sys.exit()
+
 import os 
 banner = """
 \033[1;92m██████╗  ██████╗  █████╗ ███╗   ███╗███████╗
@@ -10,9 +21,9 @@ banner = """
 os.system('clear')
 print(banner) 
 
-print("Hello, cảm ơn bạn đã sử dụng <3")
-name = input ("bạn tên là gì:")
-print(f"Hello {name}")
+
+name = input('Tên bạn là gì: ')
+print('Hello bạn'+name+'thanks bạn đã xem tool')
 
 print("update game, done")
 
@@ -25,7 +36,7 @@ print("bạn sai, đưa tôi 2$. bạn thắng, tôi đưa 20$")
 #GuessingGame.py
 import random # phải “nhập khẩu” chương trình random trước
 the_number = random.randint(1, 10)
-guess = input("Guess a number between 1 and 10: ") # bạn đoán mò 1 số từ 1 đến 10
+guess = int(input("Guess a number between 1 and 10: ")) # bạn đoán mò 1 số từ 1 đến 10
 count = 0
 while guess != the_number: # trong khi số bạn cho còn khác với số của máy cho thì cứ tiếp tục vòng lặp while
     if guess > the_number:
@@ -34,7 +45,7 @@ while guess != the_number: # trong khi số bạn cho còn khác với số củ
     if guess < the_number:
         print(guess, "sai rồi đưa t 2$ :).") # không phải, số m chọn thấp quá,đưa t 2$
         count = count + 2
-    guess = input("lại đê bạn êi :)") # Đoán lại đi !
+    guess = int(input("lại đê bạn êi :)")) # Đoán lại đi !
 print(guess, "đúng rồi :( 20$ nè") # Đúng rồi m thắng 20$ :(((
 if count < 20:
   print("But we pay", 20-count, "$")
@@ -72,7 +83,8 @@ while player != "quit":           # Tiếp tục chơi trong khi bạn chưa gõ
         else: # nếu không
             print("tôi thắng rồi, bạn thua!") # computer thắng
     else: 
-        print("tôi nghĩ có j đó sai rồi, báo cho chủ nhân tôi với nhé ") # có gì đó sai rồi
-    print()                             # Nhảy 1 dòng trống
-    player = input("bạn muốn chơi với tôi tiếp không (or quit)? ") # chơi tiếp hay gõ quit để nghỉ chơi? 
+        print("tôi nghĩ có j đó sai rồi, báo cho chủ nhân tôi với nhé ")
+    print()                             
+    player = input("bạn muốn chơi với tôi tiếp không (or quit)? ") 
+   
   
