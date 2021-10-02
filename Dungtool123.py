@@ -23,7 +23,7 @@ print(banner)
 
 
 name = input('Tên bạn là gì: ')
-print('Hello bạn'+name+'thanks bạn đã xem tool')
+print('Hello bạn '+name+' thanks bạn đã xem tool <3')
 
 print("update game, done")
 
