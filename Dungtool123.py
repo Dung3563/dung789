@@ -38,3 +38,39 @@ if count < 20:
   print("But we pay", 20-count, "$")
 else:
   print("But you still have to pay", 20-count, "$")
+  
+  print("tiếp theo là trò chơi con mực lỗi p2 :))")
+  
+  print("trò chơi này tên là oẳn tù tì (búa bao kéo)")
+  
+
+import random   # “nhập cảng” đúng ra là gọi chương trình random của Python 
+choices = ["búa", "lá", "kéo"] # danh sách tên các thứ bạn/computer chọn 
+print("búa thắng kéo. kéo thắng lá. lá thắng búa.") # luật lệ của trò chơi
+player = input("bạn chọn búa, lá hay kéo (or quit)? ") # bạn ra cái gì? búa, giấy hay kéo hay quit?
+while player != "quit":           # Tiếp tục chơi trong khi bạn chưa gõ chữ quit 
+    player = player.lower()   # Chuyển cái bạn chọn ra thành chữ thường (lower case)
+    computer = random.choice(choices)   # computer chọn ngẫu nhiên một cái trong danh sách choices
+    print("You chose " +player+ ", and the computer chose " +computer+ ".") # cho hiện ra cái bạn chọn và cái computer chọn. Dấu + để nối các biến player và computer vào với các string (text) mà thôi
+    if player == computer: # nếu giống nhau
+        print("hòa rồi!") # giống nhau thì huề
+    elif player == "búa":  # nếu bạn chọn búa
+        if computer == "kéo": # nếu computer chọn kéo
+            print("bạn thắng rồi, chúc mừng <3!")  # bạn thắng
+        else:  # nếu không
+            print("tôi win rồi, bạn thua!") # computer thắng
+    elif player == "lá":  # nếu bạn ra giấy
+        if computer == "búa": # và nếu computer ra búa
+            print("bạn thắng rồi!") # thì bạn thắng
+        else: # nếu không
+            print("tôi thắng rồi, bạn thua!") # computer thắng
+    elif player == "kéo": # nếu bạn ra kéo
+        if computer == "lá": # và nếu computer ra giấy
+            print("bạn thắng rồi!") # thì bạn thắng 
+        else: # nếu không
+            print("tôi thắng rồi, bạn thua!") # computer thắng
+    else: 
+        print("tôi nghĩ có j đó sai rồi, báo cho chủ nhân tôi với nhé ") # có gì đó sai rồi
+    print()                             # Nhảy 1 dòng trống
+    player = input("bạn muốn chơi với tôi tiếp không (or quit)? ") # chơi tiếp hay gõ quit để nghỉ chơi? 
+  
