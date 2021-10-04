@@ -87,4 +87,24 @@ while player != "quit":           # Tiếp tục chơi trong khi bạn chưa gõ
     print()                             
     player = input("bạn muốn chơi với tôi tiếp không (or quit)? ") 
    
-  
+   # HighCard.py 
+import random
+suits = ["bích", "rô", "cơ", "tép"] # list các suits 
+faces = ["hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín",
+         "mười", "J", "Q", "K", "A"] # list các faces 
+keep_going = True  # Boolean variable 
+while keep_going:  # mới đầu keep_going là True 
+    my_face = random.choice(faces) # bạn chọn một face ngẫu nhiên
+    my_suit = random.choice(suits) # bạn chọn một suit ngẫu nhiên
+    your_face = random.choice(faces) # computer chọn một face ngẫu nhiên
+    your_suit = random.choice(suits) # computer chọn một suit ngẫu nhiên
+    print("tôi có", my_face, "of", my_suit)
+    print("bạn có", your_face, "of", your_suit)
+    if faces.index(my_face) > faces.index(your_face):
+        print("tôi thắng!")  # tôi thắng
+    elif faces.index(my_face) < faces.index(your_face): # elif : else if
+        print("bạn thắng!")  # bạn thắng
+    else:
+        print("chúng ta hòa!")  # huề
+    answer = input("muốn tiếp tục đánh bài thì nhấn nút [ENTER], trái lại thì bấm bất cứ nút nào trên bàn phím : ") # muốn tiếp tục đánh bài thì nhấn nút ENTER, trái lại thì bấm bất cứ nút nào trên bàn phím
+    keep_going = (answer == "") # bấm ENTER thì keep_going vẫn là True nên vòng loop WHILE vẫn tiếp tục. Trái lại nó không True tức là FALSE thì máy ngưng
