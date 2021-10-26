@@ -8,11 +8,31 @@ def write(z):
 	for e in z + '\n':
 		sys.stdout.write(e)
 		sys.stdout.flush()
-		time.sleep(0.001)
+		time.sleep(0.02)
 def load():
 	kha = ['.   ','..  ','... ']
 	for o in kha:
 		print("\r\033[1;97m[\033[1;96m*\033[1;97m] \033[1;92mLoading \033[1;97m"+o),;sys.stdout.flush();time.sleep(1)
+def key():
+  key = input('[!]Nhập key của bạn: ')
+  if key == '':
+    print("[!]Sai key")
+    os.system('clear')
+  elif key == 'niemphong':
+    print("key đúng")
+  else:
+    print("Key sai")
+    os.system.exit()
+def key1():
+  key = input('[!]Nhập key của bạn: ')
+  if key == '':
+    print("[!]Sai key")
+    os.system('clear')
+  elif key == 'axeyed kha' or key == 'Axeyed kha':
+    print("key đúng")
+  else:
+    print("Key sai")
+    os.system.exit()
 f = "\033[1;97m------------------------------------------------------------"
 banner = """
 \033[1;96m██████╗  [•] Copyright Axeyed Kha (có của Dũng nữa :))
@@ -58,12 +78,15 @@ def menu():
   write(t+'['+xl+'12'+t+'] Tính điểm trung bình 12 môn')
   write(t+'['+xl+'13'+t+'] Tính điểm trung bình 13 môn')
   write(t+'['+xl+'14'+t+'] Random đáp án trắc nghiệm')
+  write(t+'['+xl+'15'+t+'] Tính xác suất(premium :)))')
+  write(t+'['+xl+'16'+t+'] tính điểm trắc nghiệm 30 câu(update)  ')
   print(f) 
   write(t+'['+xl+'20'+t+'] Game oẳn tù tì(búa bao kéo)')
+  write(t+'['+xl+'21'+t+'] Game tập tầm vông(đại loại vậy :) vì chưa biết vùng khác tên là gì ')
   print(f)
   write(t+'['+xl+'30'+t+'] Góc tool xịn xò(Đang update) ')
   print(f) 
-  write(t+'['+xl+'40'+t+'] Góc cho người hệ tâm linh :)))')
+  write(t+'['+xl+'40'+t+'] Góc cho người hệ tâm linh :))) (Niêm phong vì không còn thiêng như nếu muốn thử thì ib Dũng để đc thử) ')
   print(f) 
   q = input(t+'[?] Nhập lựa chọn của bạn: '+xl)
   if q == '1' or q == '01':
@@ -94,8 +117,14 @@ def menu():
     k13()
   elif q == '14' or q == '14':
     k14()
+  elif q == '15' or q == '15':
+    k15()
+  elif q == '16' or q == '16':
+    k16()
   elif q == '20' or q == '20':
     k20()
+  elif q == '21' or q == '21':
+    k21()
   elif q == '30' or q == '30':
     k30()
   elif q == '40' or q == '40':
@@ -528,6 +557,18 @@ def k14():
     if answer == "quit" or answer == "Quit":
       os.system('clear')
       os.sys.exit()
+def k15():
+  os.system('clear')
+  print(banner) 
+  print(f) 
+  write('[!]Tool sẽ tính số cách xảy ra với trường hợp bạn đưa ra')
+  a = float(input('[•]Nhập số đơn vị có trong bài(vd: người, quả...): '))
+  if a == '3':
+    print('tool chưa xong đâu :(( thông cảm nha ')
+def k16():
+  os.system('clear')
+  print(banner) 
+  
 def k20():
   os.system('clear') 
   write(banner)
@@ -562,16 +603,39 @@ def k20():
         print("tôi nghĩ có j đó sai rồi, báo cho chủ nhân tôi với nhé ")
     print()                             
     player = input("bạn muốn chơi với tôi tiếp không (or quit)? ") 
+def k21():
+  os.system('clear')
+  print(banner)
+  write(f)
+  write('LUẬT: có 2 ô(ô 1 và ô 2) và phải chọn đúng ô với máy chọn')
+  o = ['1 ',' 2']
+  keep_going = True 
+  while keep_going:  
+    my_o = random.choice(o)
+    write('tập tầm vông....')
+    a = int(input('[?]Chọn ô đúng?: '))
+    time.sleep(3)
+    if a == my_o:
+      write('[√]Bạn thắng rồi')
+    else:
+      write('[!]Thua r :(((')
+      q = input('Bạn muốn chơi lại không?: ')
+      if q == 'n' or q == 'N':
+        os.system.exit()
+        yn()
 def k30():
+  key1()
   os.system('clear')
   print(banner) 
-  print("Đã kêu đang update mà :3")
-  time.sleep(0.5)
-  write('Ra dùng tạm tool khác đi nhaaaaa <3')
+  write('Happy Birthday: ')
+  write('[√]Mình không có gì nhiều...chỉ có cái tool này để chúc sinh nhật bạn ')
   yn()
 def k40():
+  key()
+  os.system('clear')
+  write('[!]Lưu ý: tool chỉ mang tính chất giải trí và không có mục đích xúc phải 1 cá nhân hay 1 tổ chức nào đó.')
   phat = """
-                             _`			
+                       \033[1;93m      _`			
                           _ooOoo_				
                          o8888888o				
                          88" . "88				
@@ -604,7 +668,7 @@ def k40():
     //    /
          /"""
   write(phat) 
-  uoc = input("Hãy ước điều bạn muốn: ")
+  uoc = input("\033[1;97mHãy ước điều bạn muốn: ")
   write('mong bạn 1 ngày tốt lành <3')
   write('Và điều ước sẽ tới với bạn')
   yn()
