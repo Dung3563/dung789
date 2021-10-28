@@ -2,6 +2,7 @@ import os, math, time, sys, random
 d = '\033[1;91m'
 xl = '\033[1;92m'
 v = '\033[1;93m'
+h = '\033[1;95m'
 xb = '\033[1;96m'
 t = '\033[1;97m'
 def write(z):
@@ -33,6 +34,7 @@ def key1():
   else:
     print("Key sai")
     os.system.exit()
+money = 30000
 f = "\033[1;97m------------------------------------------------------------"
 banner = """
 \033[1;96m██████╗  [•] Copyright Axeyed Kha (có của Dũng nữa :))
@@ -86,6 +88,11 @@ def menu():
   print(f)
   write(t+'['+xl+'30'+t+'] Góc tool xịn xò(Đang update) ')
   print(f) 
+  write(t+'['+h+'khu shopping'+t+']') 
+  write(t+'['+xl+'31'+t+'] sờ nách :))')
+  write(t+'['+xl+'32'+t+'] Nước') 
+  write(t+'['+xl+'33'+t+'] Bánh') 
+  print(f) 
   write(t+'['+xl+'40'+t+'] Góc cho người hệ tâm linh :))) (Niêm phong vì không còn thiêng như nếu muốn thử thì ib Dũng để đc thử) ')
   print(f) 
   q = input(t+'[?] Nhập lựa chọn của bạn: '+xl)
@@ -127,6 +134,12 @@ def menu():
     k21()
   elif q == '30' or q == '30':
     k30()
+  elif q == '31' or q == '31':
+    k31()
+  elif q == '32' or q == '32':
+    k31()
+  elif q == '33' or q == '33':
+    k31()
   elif q == '40' or q == '40':
     k40()
   else:
@@ -630,6 +643,31 @@ def k30():
   write('Happy Birthday: ')
   write('[√]Mình không có gì nhiều...chỉ có cái tool này để chúc sinh nhật bạn ')
   yn()
+def k31():
+  write('Đồ của bạn đây, chúc ngon miệng :))')
+  a = input('bạn muốn ăn nhẹ hay ăn kiểu chết đói(nhẹ/đói): ')
+  if a == 'nhẹ' or a == 'Nhẹ':
+    write('nhăm nhăm :)))')
+  elif a == 'Đói' or a == 'đói':
+    write('nhoàm nhoàm, ăn lòi l')
+  else:
+      print(d+"[!]Nhập sai")
+      os.system.exit()
+      yn()
+def k32():
+  write('Đồ của bạn đây, chúc ngon miệng :))')
+  yn()
+def k33():
+  write('Đồ của bạn đây, chúc ngon miệng :))')
+  a = input('bạn muốn ăn nhẹ hay ăn kiểu chết đói(nhẹ/đói) :)')
+  if a == 'nhẹ' or a == 'Nhẹ':
+    write('nhăm nhăm :)))')
+  elif a == 'Đói' or a == 'đói':
+    write('nhoàm nhoàm, ăn lòi l')
+  else:
+      print(d+"[!]Nhập sai")
+      os.system.exit()
+      yn()
 def k40():
   key()
   os.system('clear')
