@@ -1,10 +1,10 @@
-import os, math, time, sys, random
-d = '\033[1;91m'
-xl = '\033[1;92m'
-v = '\033[1;93m'
-h = '\033[1;95m'
-xb = '\033[1;96m'
-t = '\033[1;97m'
+import os, math, time, sys, random,datetime
+d = '\x1b[1;91m'
+xl = '\x1b[1;92m'
+v = '\x1b[1;93m'
+xb = '\x1b[1;96m'
+t = '\x1b[1;97m'
+h = '\x1b[1;95m'
 def write(z):
 	for e in z + '\n':
 		sys.stdout.write(e)
@@ -591,18 +591,21 @@ def k14():
   write('\033[1;91m[!]Lưu ý: tool chỉ mang tính chất giải trí, không phục vụ mục đích học tập')
   write('\033[1;97m[•]Mong các bạn đạt điểm cao trong bài ktra nhaaa :3')
   write(f) 
-  suits = ["A", "B", "C", "D"] 
+  suits = ["A", "B", "C", "D"]
+  dem=0
   keep_going = True 
   while keep_going:  
-    my_suit = random.choice(suits)
-    load()
-    time.sleep(0.5)
-    write('\033[1;97m[√]Đáp án là: '+my_suit)
-    answer = input("[•]Muốn tiếp tục random thì bấm Enter, nếu không thì bấm quit: ") 
-    keep_going = (answer == "")
-    if answer == "quit" or answer == "Quit":
-      os.system('clear')
-      os.sys.exit()
+       j=datetime.datetime.now().strftime("%X")
+       dem=dem+1
+       my_suit = random.choice(suits)
+       load()
+       time.sleep(0.5)
+       write(f'\x1b[1;93m[{dem}] >\x1b[1;92m{j} >\x1b[1;96m"Đáp án là" >\x1b[1;94m'+ my_suit)
+       answer = input("[•]Muốn tiếp tục random thì bấm Enter, nếu không thì bấm quit: ") 
+       keep_going = (answer == "")
+       if answer == "quit" or answer == "Quit":
+          os.system('clear')
+          os.sys.exit()
 def k15():
   os.system('clear')
   print(banner) 
@@ -727,7 +730,7 @@ def k40():
                       ____/`---'\____				
                     .'  \\|     |//  `.			
                    /  \\|||  :  |||//  \			
-                  /  _||||| -:- |||||_  \			
+                  / _||||| -:- |||||_  \			
                   |   | \\\  -  /'| |   |			
                   | \_|  `\`---'//  |_/ |			
                   \  .-\__ `-. -'__/-.  /			
