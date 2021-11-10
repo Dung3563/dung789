@@ -43,7 +43,7 @@ def login():
                 print ('Wrong Key')
         else:
             print ('Wrong Username Key')
-def menu():
+def main_menu():
   os.system('clear')
   print(banner) 
   print(f) 
