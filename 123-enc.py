@@ -170,5 +170,10 @@ def tool_follow_function():
         os.sys.exit()
     else:
         print(d+'[!] Lỗi!! ')
+def exit():
+    print(banner)
+    print(f)
+    print(xl+'Cảm ơn đã dùng tool của tôi')
+login()
             
     
