@@ -74,7 +74,20 @@ def tool_like_function():
     print(f) 
     print(v+'[√]Job bạn chọn: Like')
     print(f) 
+    tokentds = input('\033[1;93m Enter Token_TDS Here >>')
+    print(f)
+    tokenfb = input('\033[1;96m Enter Token FB Here >>')
     time.sleep(1)
+    log=json.loads(requests.get('https://traodoisub.com/api/?fields=profile&access_token='+tokentds).text)
+    if "success" in log:
+        user=log['data']['user']
+        xu=log['data']['xu']
+        print(f)
+        print(xl+"Login Succesfully")
+    else:
+        print(d+"Token Invalid")
+        time.sleep(3)
+        os.sys.exit()
     print(f) 
     print(v+'Tên tài khoản:'+user)
     print(v+'Xu trong tài khoản:'+xu) 
