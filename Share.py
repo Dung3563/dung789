@@ -4,7 +4,7 @@ xl = '\033[1;92m'
 v = '\033[1;93m'
 xb = '\033[1;96m'
 t = '\033[1;97m'
-vii = '\033[1;95m'
+vio = '\033[1;95m'
 def write(z):
 	for e in z + '\n':
 		sys.stdout.write(e)
