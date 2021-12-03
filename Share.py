@@ -1,4 +1,4 @@
-import os, sys, requests, time, datetime
+import os, sys, requests, time, datetime, json
 d = '\033[1;91m'
 xl = '\033[1;92m'
 v = '\033[1;93m'
@@ -39,6 +39,7 @@ def share_token1_function():
   print(banner) 
   print(f) 
   tokenfb = input(vio+"Nhập token fb của bạn: ")
+  idshare = input(vio+"Nhập id cần share: ")
   dl = input(vio+"Nhập delay: ")
   check_token = json.loads(requests.get('https://graph.facebook.com/me/?access_token='+tokenfb).text)
   if "id" in check_token:
@@ -60,6 +61,7 @@ def share_token1_function():
   t=datetime.datetime.now().strftime("%X")
   dem=dem+1 
   while True:
+      getshare=requests.get('https://graph.facebook.com/'+idshare+'?access_token='+tokenfb)
       idshare=getshare.json()[0]['id']
       urlshare='https://graph.facebook.com/'+str(idlike)+'/share'
       datashare="access_token="+tokenfb
