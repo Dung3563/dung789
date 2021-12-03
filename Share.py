@@ -69,6 +69,6 @@ def share_token1_function():
       id=idshare[0:15]
       write(f'\x1b[1;93m ==>[{dem}] >\x1b[1;92m {t} >\x1b[1;96m Share >\x1b[1;95m {id} >\x1b[1;93m Hoàn Thành ')
       for demtg in range(dl, -1, -1):
-      print(xb+'Làm job tiếp sau -->   '+str(demtg)+'   ',end='\r')
-      time.sleep(1)
+        print(xb+'Làm job tiếp sau --> '+str(demtg)+'  ',end='\r')
+        time.sleep(1)
 menu()
