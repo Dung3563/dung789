@@ -45,7 +45,7 @@ def share_token1_function():
   if "id" in check_token:
         idfb = check_token['id']
         namefb = check_token['name']
-        if "success" in run:
+        if "success" in check_token:
             print(f)
             print(xl+'Đang cấu hình id: '+str(idfb)+' | '+str(namefb)+'')
         else:
@@ -67,11 +67,8 @@ def share_token1_function():
       datashare="access_token="+tokenfb
       share=requests.post(urlshare, data=datashare)
       id=idshare[0:15]
-      if "success" in nhan:
-                write(f'\x1b[1;93m ==>[{dem}] >\x1b[1;92m {t} >\x1b[1;96m Share >\x1b[1;95m {id} >\x1b[1;93m Hoàn Thành ')
-                for demtg in range(dl, -1, -1):
-                    print(xb+'Làm job tiếp sau -->   '+str(demtg)+'   ',end='\r')
-                    time.sleep(1)
-      else:
-        print(d+'Lỗi '+id,end='\r')
+      write(f'\x1b[1;93m ==>[{dem}] >\x1b[1;92m {t} >\x1b[1;96m Share >\x1b[1;95m {id} >\x1b[1;93m Hoàn Thành ')
+      for demtg in range(dl, -1, -1):
+      print(xb+'Làm job tiếp sau -->   '+str(demtg)+'   ',end='\r')
+      time.sleep(1)
 menu()
